@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class adminController extends Controller
+class AdminController extends Controller
 {
     public function __construct(
         private Admin $admin,
