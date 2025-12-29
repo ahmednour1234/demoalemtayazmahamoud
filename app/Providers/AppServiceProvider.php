@@ -30,6 +30,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // =========================
+        // Load Migrations from Subdirectories
+        // =========================
+        $this->loadMigrationsFrom(glob(database_path('migrations/*'), GLOB_ONLYDIR));
+
+        // =========================
         // Global: reportCompany (View Composer)
         // =========================
         View::composer('*', function ($view) {

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FinanceAndAccountingModuleSeeder::class);
         $this->call(HrAndAttendanceModuleSeeder::class);
         $this->call(ProjectsAndTasksModuleSeeder::class);
+        $this->call(ProductionAndManufacturingModuleSeeder::class);
         $this->call(SupportAndOthersModuleSeeder::class);
         $this->call(UnhandledTablesModuleSeeder::class);
     }
