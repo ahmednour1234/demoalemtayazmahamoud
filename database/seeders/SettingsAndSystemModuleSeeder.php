@@ -20,6 +20,7 @@ class SettingsAndSystemModuleSeeder extends Seeder
         $this->call(\Database\Seeders\SettingsAndSystem\CustomFieldsSeeder::class);
         $this->call(\Database\Seeders\SettingsAndSystem\CustomFieldValuesSeeder::class);
         $this->call(\Database\Seeders\SettingsAndSystem\DepartmentsSeeder::class);
+        $this->call(\Database\Seeders\SettingsAndSystem\FailedJobsSeeder::class);
         $this->call(\Database\Seeders\SettingsAndSystem\MigrationsSeeder::class);
         $this->call(\Database\Seeders\SettingsAndSystem\NotificationsSeeder::class);
         $this->call(\Database\Seeders\SettingsAndSystem\RegionsSeeder::class);

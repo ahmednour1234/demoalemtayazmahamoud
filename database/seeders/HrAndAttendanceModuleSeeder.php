@@ -13,6 +13,10 @@ class HrAndAttendanceModuleSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(\Database\Seeders\HrAndAttendance\AttendancesSeeder::class);
+        $this->call(\Database\Seeders\HrAndAttendance\GuarantorsSeeder::class);
+        $this->call(\Database\Seeders\HrAndAttendance\InterviewEvaluationsSeeder::class);
+        $this->call(\Database\Seeders\HrAndAttendance\JobApplicantsSeeder::class);
         $this->call(\Database\Seeders\HrAndAttendance\ShiftsSeeder::class);
 
     }
