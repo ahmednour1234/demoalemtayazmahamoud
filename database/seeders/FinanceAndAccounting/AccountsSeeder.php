@@ -16,11 +16,7 @@ class AccountsSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('accounts')->truncate();
-        DB::statement('--
--- Dumping data for table `accounts`
---
-
-INSERT INTO `accounts` (`id`, `storage_id`, `account`, `description`, `balance`, `account_number`, `total_in`, `total_out`, `type`, `account_type`, `code`, `created_at`, `updated_at`, `deleted_at`, `company_id`, `parent_id`, `default_cost_center_id`, `cost_center`) VALUES
+        DB::statement('INSERT INTO `accounts` (`id`, `storage_id`, `account`, `description`, `balance`, `account_number`, `total_in`, `total_out`, `type`, `account_type`, `code`, `created_at`, `updated_at`, `deleted_at`, `company_id`, `parent_id`, `default_cost_center_id`, `cost_center`) VALUES
 (1, NULL, \'أصول متداولة\', \'أصول متداولة\', 0, \'\', 0, 0, 0, \'asset\', 11, \'2025-03-03 18:51:51\', \'2025-08-14 17:58:34\', NULL, 1, NULL, NULL, \'0\'),
 (4, NULL, \'اصول غير متداولة.\', \'اصول غير متداولة.\', 0, \'10102\', 0, 0, 0, \'asset\', 12, \'2025-03-03 21:35:31\', \'2025-09-11 15:25:14\', NULL, 1, NULL, NULL, \'0\'),
 (8, NULL, \'الصناديق\', \'الصناديق\', 0, \'101\', 0, 0, 0, \'asset\', 111, \'2025-03-03 22:44:27\', \'2025-08-14 17:58:34\', NULL, 1, 1, NULL, \'0\'),

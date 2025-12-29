@@ -16,11 +16,7 @@ class StoragesSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('storages')->truncate();
-        DB::statement('--
--- Dumping data for table `storages`
---
-
-INSERT INTO `storages` (`id`, `parent_id`, `local_id`, `name`, `insert_flag`, `created_at`, `update_flag`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `storages` (`id`, `parent_id`, `local_id`, `name`, `insert_flag`, `created_at`, `update_flag`, `updated_at`) VALUES
 (1, NULL, 1, \'الخزينة الرئيسية\', 1, \'2024-08-31 03:57:04\', 0, \'2024-09-12 15:20:22\'),
 (22, NULL, 0, \'مستودع حفر الباطن\', 1, \'2024-12-08 08:34:06\', 0, \'2024-12-08 08:34:19\'),
 (23, NULL, 0, \'الأصول\', 1, \'2025-02-27 14:56:32\', 0, \'2025-02-27 14:56:32\'),

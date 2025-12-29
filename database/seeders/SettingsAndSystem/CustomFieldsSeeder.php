@@ -16,11 +16,7 @@ class CustomFieldsSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('custom_fields')->truncate();
-        DB::statement('--
--- Dumping data for table `custom_fields`
---
-
-INSERT INTO `custom_fields` (`id`, `name`, `key`, `type`, `options`, `default_value`, `is_required`, `is_active`, `sort_order`, `applies_to`, `group`, `help_text`, `created_at`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `custom_fields` (`id`, `name`, `key`, `type`, `options`, `default_value`, `is_required`, `is_active`, `sort_order`, `applies_to`, `group`, `help_text`, `created_at`, `updated_at`) VALUES
 (1, \'رقم الجواز\', \'nationality_Id\', \'text\', NULL, NULL, 1, 1, 1, \'App\\\\Models\\\\Lead\', NULL, NULL, \'2025-08-23 20:27:52\', \'2025-09-10 01:15:54\'),
 (2, \'الجنسية\', \'nationality\', \'text\', NULL, NULL, 1, 0, 2, \'App\\\\Models\\\\Lead\', NULL, NULL, \'2025-08-23 20:28:40\', \'2025-09-09 18:15:48\'),
 (3, \'مدة الوقت للرد\', \'response_time\', \'datetime\', NULL, NULL, 1, 1, 1, \'App\\\\Models\\\\CallLog\', NULL, NULL, \'2025-08-23 21:10:39\', \'2025-09-09 18:15:21\'),

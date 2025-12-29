@@ -16,11 +16,7 @@ class CustomFieldValuesSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('custom_field_values')->truncate();
-        DB::statement('--
--- Dumping data for table `custom_field_values`
---
-
-INSERT INTO `custom_field_values` (`id`, `custom_field_id`, `fieldable_type`, `fieldable_id`, `value`, `value_json`, `created_at`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `custom_field_values` (`id`, `custom_field_id`, `fieldable_type`, `fieldable_id`, `value`, `value_json`, `created_at`, `updated_at`) VALUES
 (1, 1, \'App\\\\Models\\\\Lead\', 7, \'ffggf3434\', NULL, \'2025-08-23 20:52:44\', \'2025-09-10 01:16:14\'),
 (2, 2, \'App\\\\Models\\\\Lead\', 7, \'\', NULL, \'2025-08-23 20:52:44\', \'2025-08-23 20:52:44\'),
 (3, 1, \'App\\\\Models\\\\Lead\', 8, \'12345678\', NULL, \'2025-08-23 20:53:25\', \'2025-08-23 20:53:25\'),

@@ -16,11 +16,7 @@ class CurrenciesSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('currencies')->truncate();
-        DB::statement('--
--- Dumping data for table `currencies`
---
-
-INSERT INTO `currencies` (`id`, `country`, `currency_code`, `currency_symbol`, `exchange_rate`, `created_at`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `currencies` (`id`, `country`, `currency_code`, `currency_symbol`, `exchange_rate`, `created_at`, `updated_at`) VALUES
 (1, \'US Dollar\', \'USD\', \'$\', 1.00, NULL, NULL),
 (2, \'Canadian Dollar\', \'CAD\', \'CA$\', 1.00, NULL, NULL),
 (3, \'Euro\', \'EUR\', \'€\', 1.00, NULL, NULL),

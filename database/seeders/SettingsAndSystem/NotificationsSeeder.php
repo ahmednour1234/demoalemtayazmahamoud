@@ -16,11 +16,7 @@ class NotificationsSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('notifications')->truncate();
-        DB::statement('--
--- Dumping data for table `notifications`
---
-
-INSERT INTO `notifications` (`id`, `user_id`, `type`, `title`, `body`, `data`, `read_at`, `deleted_at`, `created_at`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `notifications` (`id`, `user_id`, `type`, `title`, `body`, `data`, `read_at`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1, 159, \'task.assigned\', \'تم إسناد مهمة جديدة\', \'عنوان المهمة: gfgf\', \'{\\"task_id\\":1,\\"assigned_by\\":100}\', NULL, NULL, \'2025-09-07 21:49:06\', \'2025-09-07 21:49:06\'),
 (2, 160, \'task.assigned\', \'تم إسناد مهمة جديدة\', \'عنوان المهمة: gfgf\', \'{\\"task_id\\":1,\\"assigned_by\\":100}\', NULL, NULL, \'2025-09-07 21:49:06\', \'2025-09-07 21:49:06\'),
 (3, 161, \'task.assigned\', \'تم إسناد مهمة جديدة\', \'عنوان المهمة: gfgf\', \'{\\"task_id\\":1,\\"assigned_by\\":100}\', NULL, NULL, \'2025-09-07 21:49:06\', \'2025-09-07 21:49:06\'),

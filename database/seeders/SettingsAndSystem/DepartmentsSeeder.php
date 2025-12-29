@@ -16,11 +16,7 @@ class DepartmentsSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('departments')->truncate();
-        DB::statement('--
--- Dumping data for table `departments`
---
-
-INSERT INTO `departments` (`id`, `parent_id`, `name`, `code`, `active`, `level`, `path`, `created_at`, `updated_at`, `deleted_at`) VALUES
+        DB::statement('INSERT INTO `departments` (`id`, `parent_id`, `name`, `code`, `active`, `level`, `path`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, NULL, \'قسم المحاسبين\', \'999\', 1, 0, \'/1\', \'2025-09-07 16:05:08\', \'2025-09-09 17:32:22\', \'2025-09-09 17:32:22\'),
 (2, 1, \'فريق محاسبين الرياض\', \'888\', 1, 1, \'/1/2\', \'2025-09-07 16:20:00\', \'2025-09-09 17:32:25\', \'2025-09-09 17:32:25\'),
 (3, NULL, \'المحسابين\', \'1\', 1, 0, \'/3\', \'2025-09-09 17:32:53\', \'2025-09-09 17:32:53\', NULL),

@@ -16,11 +16,7 @@ class RegionsSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('regions')->truncate();
-        DB::statement('--
--- Dumping data for table `regions`
---
-
-INSERT INTO `regions` (`id`, `local_id`, `name`, `name_en`, `insert_flag`, `created_at`, `update_flag`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `regions` (`id`, `local_id`, `name`, `name_en`, `insert_flag`, `created_at`, `update_flag`, `updated_at`) VALUES
 (15, 0, \'الرياض\', NULL, 1, \'2024-12-07 10:34:58\', 0, \'2025-04-22 08:43:28\'),
 (16, 0, \'جدة\', NULL, 1, \'2024-12-07 10:35:03\', 0, \'2024-12-07 10:35:03\'),
 (17, 0, \'مكة المكرمة\', NULL, 1, \'2024-12-07 10:35:17\', 0, \'2024-12-07 10:35:17\'),

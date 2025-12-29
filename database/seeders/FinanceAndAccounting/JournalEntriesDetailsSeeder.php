@@ -16,11 +16,7 @@ class JournalEntriesDetailsSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('journal_entries_details')->truncate();
-        DB::statement('--
--- Dumping data for table `journal_entries_details`
---
-
-INSERT INTO `journal_entries_details` (`id`, `journal_entry_id`, `account_id`, `debit`, `credit`, `cost_center_id`, `description`, `attachment_path`, `entry_date`, `asset_id`, `created_at`, `updated_at`, `deleted_at`, `reversal_of_detail_id`) VALUES
+        DB::statement('INSERT INTO `journal_entries_details` (`id`, `journal_entry_id`, `account_id`, `debit`, `credit`, `cost_center_id`, `description`, `attachment_path`, `entry_date`, `asset_id`, `created_at`, `updated_at`, `deleted_at`, `reversal_of_detail_id`) VALUES
 (5, 3, 59, 0.10, 0.00, NULL, \'صص\', NULL, \'2025-09-12\', NULL, \'2025-09-12 14:24:05\', \'2025-09-12 14:30:32\', \'2025-09-12 14:30:32\', NULL),
 (6, 3, 59, 0.00, 0.10, NULL, \'صص\', NULL, \'2025-09-12\', NULL, \'2025-09-12 14:24:05\', \'2025-09-12 14:30:32\', \'2025-09-12 14:30:32\', NULL),
 (11, 6, 151, 39218.41, 0.00, NULL, \'حوالة ايراد مساند\', NULL, \'2025-11-12\', NULL, \'2025-11-12 03:10:06\', \'2025-11-12 03:10:06\', NULL, NULL),

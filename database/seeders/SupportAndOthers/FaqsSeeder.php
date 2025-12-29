@@ -16,11 +16,7 @@ class FaqsSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('faqs')->truncate();
-        DB::statement('--
--- Dumping data for table `faqs`
---
-
-INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
 (1, \'كيف أطلب خدمة؟\', \'يمكنك طلب الخدمة عبر الموقع الإلكتروني أو التطبيق الخاص بنا.\', \'2025-02-24 00:13:05\', \'2025-02-24 00:13:05\'),
 (2, \'ما هي طرق الدفع؟\', \'نقبل الدفع عبر بطاقات الائتمان، التحويل البنكي، والمحافظ الإلكترونية.\', \'2025-02-24 00:13:05\', \'2025-02-24 00:13:05\'),
 (3, \'هل يمكنني استرداد الأموال؟\', \'نعم، يمكنك استرداد الأموال خلال 14 يومًا وفقًا لسياسة الاسترداد لدينا.\', \'2025-02-24 00:13:05\', \'2025-02-24 00:13:05\'),

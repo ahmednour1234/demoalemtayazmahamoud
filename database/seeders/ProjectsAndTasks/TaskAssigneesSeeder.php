@@ -16,11 +16,7 @@ class TaskAssigneesSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('task_assignees')->truncate();
-        DB::statement('--
--- Dumping data for table `task_assignees`
---
-
-INSERT INTO `task_assignees` (`id`, `task_id`, `admin_id`, `role`, `priority`, `due_at`, `assigned_by`, `assigned_at`, `deleted_at`, `created_at`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `task_assignees` (`id`, `task_id`, `admin_id`, `role`, `priority`, `due_at`, `assigned_by`, `assigned_at`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1, 1, 159, \'assignee\', \'medium\', \'2025-10-11 21:48:00\', 100, \'2025-09-07 18:49:06\', NULL, \'2025-09-07 21:49:06\', \'2025-09-07 21:49:06\'),
 (2, 1, 160, \'assignee\', \'medium\', \'2025-10-11 21:48:00\', 100, \'2025-09-07 18:49:06\', NULL, \'2025-09-07 21:49:06\', \'2025-09-07 21:49:06\'),
 (3, 1, 161, \'assignee\', \'medium\', \'2025-10-11 21:48:00\', 100, \'2025-09-07 18:49:06\', \'2025-09-07 22:19:29\', \'2025-09-07 21:49:06\', \'2025-09-07 22:19:29\'),

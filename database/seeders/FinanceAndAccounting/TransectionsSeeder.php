@@ -16,11 +16,7 @@ class TransectionsSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('transections')->truncate();
-        DB::statement('--
--- Dumping data for table `transections`
---
-
-INSERT INTO `transections` (`id`, `tran_type`, `account_id`, `account_id_to`, `seller_id`, `branch_id`, `cost_id`, `cost_id_to`, `amount`, `description`, `debit`, `credit`, `balance`, `credit_account`, `debit_account`, `balance_account`, `balance_customer`, `date`, `end_date`, `customer_id`, `supplier_id`, `order_id`, `created_at`, `updated_at`, `deleted_at`, `company_id`, `asset_id`, `expense_id`, `tax`, `fixed_type`, `img`, `active`, `cash`, `name`, `tax_number`, `tax_id`, `is_reversal`, `salary_id`, `journal_entry_detail_id`) VALUES
+        DB::statement('INSERT INTO `transections` (`id`, `tran_type`, `account_id`, `account_id_to`, `seller_id`, `branch_id`, `cost_id`, `cost_id_to`, `amount`, `description`, `debit`, `credit`, `balance`, `credit_account`, `debit_account`, `balance_account`, `balance_customer`, `date`, `end_date`, `customer_id`, `supplier_id`, `order_id`, `created_at`, `updated_at`, `deleted_at`, `company_id`, `asset_id`, `expense_id`, `tax`, `fixed_type`, `img`, `active`, `cash`, `name`, `tax_number`, `tax_id`, `is_reversal`, `salary_id`, `journal_entry_detail_id`) VALUES
 (1, \'1\', 151, NULL, 160, 1, NULL, NULL, 16307.46, \'رصيد افتتاحي\', 0, 16307.46, -16307.46, 16307.46, 0, 0, \'0\', \'2025-01-01\', NULL, NULL, NULL, NULL, \'2025-09-11 18:20:00\', \'2025-09-11 18:20:00\', NULL, 1, NULL, NULL, 0, NULL, NULL, 1, 1, NULL, NULL, NULL, 0, NULL, NULL),
 (2, \'1\', 297, NULL, 160, 1, NULL, NULL, 16307.46, \'رصيد افتتاحي\', 16307.46, 0, 16307.46, 0, 16307.46, 0, \'0\', \'2025-01-01\', NULL, NULL, NULL, NULL, \'2025-09-11 18:20:00\', \'2025-09-11 18:20:00\', NULL, 1, NULL, NULL, 0, NULL, NULL, 1, 1, NULL, NULL, NULL, 0, NULL, NULL),
 (3, \'1\', 151, NULL, 160, 1, NULL, NULL, 16307.46, \'رصيد افتتاحي\', 0, 16307.46, -32614.92, 16307.46, 0, -16307.46, \'0\', \'2025-01-01\', NULL, NULL, NULL, NULL, \'2025-09-11 18:31:07\', \'2025-09-11 18:31:07\', NULL, 1, NULL, NULL, 0, NULL, NULL, 1, 1, NULL, NULL, NULL, 0, NULL, NULL),

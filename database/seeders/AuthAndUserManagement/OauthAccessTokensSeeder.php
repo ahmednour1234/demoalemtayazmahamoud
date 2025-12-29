@@ -16,11 +16,7 @@ class OauthAccessTokensSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('oauth_access_tokens')->truncate();
-        DB::statement('--
--- Dumping data for table `oauth_access_tokens`
---
-
-INSERT INTO `oauth_access_tokens` (`id`, `user_id`, `client_id`, `name`, `scopes`, `revoked`, `created_at`, `updated_at`, `expires_at`) VALUES
+        DB::statement('INSERT INTO `oauth_access_tokens` (`id`, `user_id`, `client_id`, `name`, `scopes`, `revoked`, `created_at`, `updated_at`, `expires_at`) VALUES
 (\'00a877699420d8c9aa3b3a12d742201ce93a85c8af4d64afca78c5b705c5569f5e7408bbd37e1a9d\', 121, 1, \'adminToken\', \'[]\', 0, \'2024-12-17 22:47:10\', \'2024-12-17 22:47:10\', \'2025-12-17 22:47:10\'),
 (\'00abee5baac35f4c0dabbfdaf9eb55e38fa9338d0d7ed6c0a23e5c82d2aadc53b331d1ec1a9fa9d5\', 121, 1, \'adminToken\', \'[]\', 0, \'2025-03-02 21:28:53\', \'2025-03-02 21:28:53\', \'2026-03-02 21:28:53\'),
 (\'0118952a9cfacec5b71e8b1483c66ac81db4dbf94661c4e98b199c53160f507f8f044bed42e20b61\', 125, 1, \'adminToken\', \'[]\', 0, \'2024-12-17 23:41:06\', \'2024-12-17 23:41:06\', \'2025-12-17 23:41:06\'),

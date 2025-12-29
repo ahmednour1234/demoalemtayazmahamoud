@@ -16,11 +16,7 @@ class StatusesSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('statuses')->truncate();
-        DB::statement('--
--- Dumping data for table `statuses`
---
-
-INSERT INTO `statuses` (`id`, `name`, `code`, `color`, `sort_order`, `active`, `deleted_at`, `created_at`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `statuses` (`id`, `name`, `code`, `color`, `sort_order`, `active`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1, \'in_Progress\', \'in_Progress\', \'#55555\', 0, 1, NULL, \'2025-09-07 21:36:51\', \'2025-09-07 21:36:57\');');
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }

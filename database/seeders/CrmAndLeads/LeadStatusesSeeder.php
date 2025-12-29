@@ -16,11 +16,7 @@ class LeadStatusesSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('lead_statuses')->truncate();
-        DB::statement('--
--- Dumping data for table `lead_statuses`
---
-
-INSERT INTO `lead_statuses` (`id`, `name`, `code`, `sort_order`, `is_active`, `created_at`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `lead_statuses` (`id`, `name`, `code`, `sort_order`, `is_active`, `created_at`, `updated_at`) VALUES
 (5, \'اصدار العقد\', \'1\', 100, 1, \'2025-09-09 17:57:24\', \'2025-09-09 17:57:24\'),
 (6, \'انتظار موافقة مكتب الارسال الخارجي\', \'2\', 101, 1, \'2025-09-09 17:59:17\', \'2025-09-09 17:59:17\'),
 (7, \'انتظار نتيجة الفحص الطبي\', \'3\', 102, 1, \'2025-09-09 17:59:43\', \'2025-09-09 17:59:43\'),

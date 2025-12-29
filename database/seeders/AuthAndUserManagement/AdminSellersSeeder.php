@@ -16,11 +16,7 @@ class AdminSellersSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('admin_sellers')->truncate();
-        DB::statement('--
--- Dumping data for table `admin_sellers`
---
-
-INSERT INTO `admin_sellers` (`id`, `admin_id`, `seller_id`, `created_at`, `updated_at`) VALUES
+        DB::statement('INSERT INTO `admin_sellers` (`id`, `admin_id`, `seller_id`, `created_at`, `updated_at`) VALUES
 (70, 162, 100, \'2025-08-30 15:32:43\', \'2025-08-30 15:32:43\'),
 (71, 162, 159, \'2025-08-30 15:32:43\', \'2025-08-30 15:32:43\'),
 (72, 162, 160, \'2025-08-30 15:32:43\', \'2025-08-30 15:32:43\'),

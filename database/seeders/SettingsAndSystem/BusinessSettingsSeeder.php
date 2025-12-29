@@ -16,11 +16,7 @@ class BusinessSettingsSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('business_settings')->truncate();
-        DB::statement('--
--- Dumping data for table `business_settings`
---
-
-INSERT INTO `business_settings` (`id`, `key`, `value`, `created_at`, `updated_at`, `company_id`) VALUES
+        DB::statement('INSERT INTO `business_settings` (`id`, `key`, `value`, `created_at`, `updated_at`, `company_id`) VALUES
 (1, \'shop_logo\', \'2025-09-11-68c2e9dced961.png\', NULL, NULL, 1),
 (2, \'pagination_limit\', \'100000\', NULL, NULL, 1),
 (3, \'currency\', \'SAR\', NULL, NULL, 1),
