@@ -16,9 +16,9 @@ class CreateVisitorsTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `visitors`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `visitors` -- CREATE TABLE `visitors` ( `id` bigint(20) UNSIGNED NOT NULL, `seller_id` bigint(20) UNSIGNED NOT NULL, `customer_id` bigint(20) UNSIGNED NOT NULL, `note` text DEFAULT NULL, `date` date NOT NULL, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `visitors` -- ALTER TABLE `visitors` ADD PRIMARY KEY (`id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `visitors` -- ALTER TABLE `visitors` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;");
+        DB::statement("CREATE TABLE `visitors` ( `id` bigint(20) UNSIGNED NOT NULL, `seller_id` bigint(20) UNSIGNED NOT NULL, `customer_id` bigint(20) UNSIGNED NOT NULL, `note` text DEFAULT NULL, `date` date NOT NULL, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `visitors` ADD PRIMARY KEY (`id`);");
+        DB::statement("ALTER TABLE `visitors` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

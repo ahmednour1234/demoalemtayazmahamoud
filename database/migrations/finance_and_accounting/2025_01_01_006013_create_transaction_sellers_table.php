@@ -16,9 +16,9 @@ class CreateTransactionSellersTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `transaction_sellers`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `transaction_sellers` -- CREATE TABLE `transaction_sellers` ( `id` bigint(20) NOT NULL, `seller_id` bigint(20) NOT NULL, `account_id` bigint(20) NOT NULL, `amount` varchar(255) NOT NULL, `note` mediumtext DEFAULT NULL, `img` mediumtext NOT NULL, `active` int(11) NOT NULL DEFAULT 0, `created_at` datetime NOT NULL DEFAULT current_timestamp(), `updated_at` datetime NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `transaction_sellers` -- ALTER TABLE `transaction_sellers` ADD PRIMARY KEY (`id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `transaction_sellers` -- ALTER TABLE `transaction_sellers` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;");
+        DB::statement("CREATE TABLE `transaction_sellers` ( `id` bigint(20) NOT NULL, `seller_id` bigint(20) NOT NULL, `account_id` bigint(20) NOT NULL, `amount` varchar(255) NOT NULL, `note` mediumtext DEFAULT NULL, `img` mediumtext NOT NULL, `active` int(11) NOT NULL DEFAULT 0, `created_at` datetime NOT NULL DEFAULT current_timestamp(), `updated_at` datetime NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `transaction_sellers` ADD PRIMARY KEY (`id`);");
+        DB::statement("ALTER TABLE `transaction_sellers` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

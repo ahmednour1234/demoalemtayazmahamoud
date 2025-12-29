@@ -16,9 +16,9 @@ class CreateFaqsTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `faqs`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `faqs` -- CREATE TABLE `faqs` ( `id` bigint(20) NOT NULL, `question` longtext NOT NULL, `answer` longtext NOT NULL, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `faqs` -- ALTER TABLE `faqs` ADD PRIMARY KEY (`id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `faqs` -- ALTER TABLE `faqs` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=297;");
+        DB::statement("CREATE TABLE `faqs` ( `id` bigint(20) NOT NULL, `question` longtext NOT NULL, `answer` longtext NOT NULL, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `faqs` ADD PRIMARY KEY (`id`);");
+        DB::statement("ALTER TABLE `faqs` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=297;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

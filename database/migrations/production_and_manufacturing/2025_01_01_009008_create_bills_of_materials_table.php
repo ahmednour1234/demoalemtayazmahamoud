@@ -16,9 +16,9 @@ class CreateBillsOfMaterialsTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `bills_of_materials`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `bills_of_materials` -- CREATE TABLE `bills_of_materials` ( `id` bigint(20) UNSIGNED NOT NULL, `product_id` bigint(20) UNSIGNED NOT NULL, `version` varchar(50) NOT NULL DEFAULT 'v1', `description` text DEFAULT NULL, `created_at` timestamp NULL DEFAULT NULL, `updated_at` timestamp NULL DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `bills_of_materials` -- ALTER TABLE `bills_of_materials` ADD PRIMARY KEY (`id`), ADD KEY `bom_product_idx` (`product_id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `bills_of_materials` -- ALTER TABLE `bills_of_materials` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;");
+        DB::statement("CREATE TABLE `bills_of_materials` ( `id` bigint(20) UNSIGNED NOT NULL, `product_id` bigint(20) UNSIGNED NOT NULL, `version` varchar(50) NOT NULL DEFAULT 'v1', `description` text DEFAULT NULL, `created_at` timestamp NULL DEFAULT NULL, `updated_at` timestamp NULL DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `bills_of_materials` ADD PRIMARY KEY (`id`), ADD KEY `bom_product_idx` (`product_id`);");
+        DB::statement("ALTER TABLE `bills_of_materials` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

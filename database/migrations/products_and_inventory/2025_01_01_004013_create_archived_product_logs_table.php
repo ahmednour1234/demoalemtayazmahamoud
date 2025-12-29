@@ -16,9 +16,9 @@ class CreateArchivedProductLogsTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `archived_product_logs`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `archived_product_logs` -- CREATE TABLE `archived_product_logs` ( `id` int(10) UNSIGNED NOT NULL, `product_id` int(10) UNSIGNED NOT NULL, `quantity` decimal(10,2) NOT NULL, `type` int(11) NOT NULL, `seller_id` int(10) UNSIGNED NOT NULL, `branch_id` int(10) UNSIGNED NOT NULL, `created_at` timestamp NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `archived_product_logs` -- ALTER TABLE `archived_product_logs` ADD PRIMARY KEY (`id`), ADD KEY `idx_product_id` (`product_id`), ADD KEY `idx_branch_id` (`branch_id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `archived_product_logs` -- ALTER TABLE `archived_product_logs` MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;");
+        DB::statement("CREATE TABLE `archived_product_logs` ( `id` int(10) UNSIGNED NOT NULL, `product_id` int(10) UNSIGNED NOT NULL, `quantity` decimal(10,2) NOT NULL, `type` int(11) NOT NULL, `seller_id` int(10) UNSIGNED NOT NULL, `branch_id` int(10) UNSIGNED NOT NULL, `created_at` timestamp NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `archived_product_logs` ADD PRIMARY KEY (`id`), ADD KEY `idx_product_id` (`product_id`), ADD KEY `idx_branch_id` (`branch_id`);");
+        DB::statement("ALTER TABLE `archived_product_logs` MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

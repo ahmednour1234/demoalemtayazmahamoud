@@ -16,9 +16,9 @@ class CreateBusinessSettingsTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `business_settings`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `business_settings` -- CREATE TABLE `business_settings` ( `id` bigint(20) UNSIGNED NOT NULL, `key` varchar(255) NOT NULL, `value` text DEFAULT NULL, `created_at` timestamp NULL DEFAULT NULL, `updated_at` timestamp NULL DEFAULT NULL, `company_id` bigint(20) DEFAULT 1, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `business_settings` -- ALTER TABLE `business_settings` ADD PRIMARY KEY (`id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `business_settings` -- ALTER TABLE `business_settings` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;");
+        DB::statement("CREATE TABLE `business_settings` ( `id` bigint(20) UNSIGNED NOT NULL, `key` varchar(255) NOT NULL, `value` text DEFAULT NULL, `created_at` timestamp NULL DEFAULT NULL, `updated_at` timestamp NULL DEFAULT NULL, `company_id` bigint(20) DEFAULT 1, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `business_settings` ADD PRIMARY KEY (`id`);");
+        DB::statement("ALTER TABLE `business_settings` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

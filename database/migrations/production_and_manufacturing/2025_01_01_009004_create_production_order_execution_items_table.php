@@ -16,9 +16,9 @@ class CreateProductionOrderExecutionItemsTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `production_order_execution_items`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `production_order_execution_items` -- CREATE TABLE `production_order_execution_items` ( `id` bigint(20) NOT NULL, `execution_id` bigint(20) NOT NULL, `product_id` bigint(20) NOT NULL, `reserved_quantity` decimal(10,2) NOT NULL, `consumed_quantity` decimal(10,2) NOT NULL, `unit_cost` decimal(15,4) NOT NULL, `reserved_cost` decimal(15,4) NOT NULL, `consumed_cost` decimal(15,4) NOT NULL, `created_at` timestamp NULL DEFAULT NULL, `updated_at` timestamp NULL DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `production_order_execution_items` -- ALTER TABLE `production_order_execution_items` ADD PRIMARY KEY (`id`), ADD KEY `idx_exec_id` (`execution_id`), ADD KEY `idx_product_id` (`product_id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `production_order_execution_items` -- ALTER TABLE `production_order_execution_items` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;");
+        DB::statement("CREATE TABLE `production_order_execution_items` ( `id` bigint(20) NOT NULL, `execution_id` bigint(20) NOT NULL, `product_id` bigint(20) NOT NULL, `reserved_quantity` decimal(10,2) NOT NULL, `consumed_quantity` decimal(10,2) NOT NULL, `unit_cost` decimal(15,4) NOT NULL, `reserved_cost` decimal(15,4) NOT NULL, `consumed_cost` decimal(15,4) NOT NULL, `created_at` timestamp NULL DEFAULT NULL, `updated_at` timestamp NULL DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `production_order_execution_items` ADD PRIMARY KEY (`id`), ADD KEY `idx_exec_id` (`execution_id`), ADD KEY `idx_product_id` (`product_id`);");
+        DB::statement("ALTER TABLE `production_order_execution_items` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

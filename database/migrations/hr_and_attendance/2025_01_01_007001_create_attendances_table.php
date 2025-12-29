@@ -16,9 +16,9 @@ class CreateAttendancesTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `attendances`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `attendances` -- CREATE TABLE `attendances` ( `id` bigint(20) NOT NULL, `admin_id` bigint(20) NOT NULL, `date` date NOT NULL, `check_in` time NOT NULL, `check_out` time DEFAULT NULL, `status` int(11) NOT NULL DEFAULT 1, `time_late` varchar(255) NOT NULL DEFAULT '0', `expected_hours` varchar(255) NOT NULL DEFAULT '0', `worked_hours` varchar(255) NOT NULL DEFAULT '0', `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `lang` double DEFAULT NULL, `late` double DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `attendances` -- ALTER TABLE `attendances` ADD PRIMARY KEY (`id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `attendances` -- ALTER TABLE `attendances` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;");
+        DB::statement("CREATE TABLE `attendances` ( `id` bigint(20) NOT NULL, `admin_id` bigint(20) NOT NULL, `date` date NOT NULL, `check_in` time NOT NULL, `check_out` time DEFAULT NULL, `status` int(11) NOT NULL DEFAULT 1, `time_late` varchar(255) NOT NULL DEFAULT '0', `expected_hours` varchar(255) NOT NULL DEFAULT '0', `worked_hours` varchar(255) NOT NULL DEFAULT '0', `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `lang` double DEFAULT NULL, `late` double DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `attendances` ADD PRIMARY KEY (`id`);");
+        DB::statement("ALTER TABLE `attendances` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

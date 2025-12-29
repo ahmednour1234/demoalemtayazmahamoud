@@ -16,9 +16,9 @@ class CreateJobApplicantsTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `job_applicants`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `job_applicants` -- CREATE TABLE `job_applicants` ( `id` bigint(20) NOT NULL, `full_name` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `phone` varchar(50) DEFAULT NULL, `resume_pdf` varchar(255) DEFAULT NULL, `status` enum('new','screening','interview','accepted','rejected') DEFAULT 'new', `applied_date` date NOT NULL, `created_at` timestamp NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `job_applicants` -- ALTER TABLE `job_applicants` ADD PRIMARY KEY (`id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `job_applicants` -- ALTER TABLE `job_applicants` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;");
+        DB::statement("CREATE TABLE `job_applicants` ( `id` bigint(20) NOT NULL, `full_name` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `phone` varchar(50) DEFAULT NULL, `resume_pdf` varchar(255) DEFAULT NULL, `status` enum('new','screening','interview','accepted','rejected') DEFAULT 'new', `applied_date` date NOT NULL, `created_at` timestamp NULL DEFAULT current_timestamp(), `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `job_applicants` ADD PRIMARY KEY (`id`);");
+        DB::statement("ALTER TABLE `job_applicants` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

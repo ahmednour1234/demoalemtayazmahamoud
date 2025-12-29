@@ -16,10 +16,10 @@ class CreateSellerCategoriesTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `seller_categories`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `seller_categories` -- CREATE TABLE `seller_categories` ( `id` int(11) NOT NULL, `cat_id` bigint(20) UNSIGNED NOT NULL, `seller_id` bigint(20) UNSIGNED NOT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;");
-        DB::statement("-- -- Indexes for table `seller_categories` -- ALTER TABLE `seller_categories` ADD PRIMARY KEY (`id`), ADD KEY `cat_id` (`cat_id`), ADD KEY `seller_categories_ibfk_2` (`seller_id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `seller_categories` -- ALTER TABLE `seller_categories` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=665;");
-        DB::statement("-- -- Constraints for table `seller_categories` -- ALTER TABLE `seller_categories` ADD CONSTRAINT `seller_categories_ibfk_1` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE, ADD CONSTRAINT `seller_categories_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `admins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;");
+        DB::statement("CREATE TABLE `seller_categories` ( `id` int(11) NOT NULL, `cat_id` bigint(20) UNSIGNED NOT NULL, `seller_id` bigint(20) UNSIGNED NOT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;");
+        DB::statement("ALTER TABLE `seller_categories` ADD PRIMARY KEY (`id`), ADD KEY `cat_id` (`cat_id`), ADD KEY `seller_categories_ibfk_2` (`seller_id`);");
+        DB::statement("ALTER TABLE `seller_categories` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=665;");
+        DB::statement("ALTER TABLE `seller_categories` ADD CONSTRAINT `seller_categories_ibfk_1` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE, ADD CONSTRAINT `seller_categories_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `admins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

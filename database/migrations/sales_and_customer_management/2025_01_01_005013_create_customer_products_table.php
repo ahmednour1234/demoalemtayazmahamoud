@@ -16,9 +16,9 @@ class CreateCustomerProductsTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `customer_products`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `customer_products` -- CREATE TABLE `customer_products` ( `id` bigint(20) NOT NULL, `product_id` bigint(20) NOT NULL, `customer_id` bigint(20) NOT NULL, `price` double NOT NULL DEFAULT 0, `tax` double NOT NULL DEFAULT 0, `discount` double NOT NULL DEFAULT 0, `quantity` double NOT NULL, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `customer_products` -- ALTER TABLE `customer_products` ADD PRIMARY KEY (`id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `customer_products` -- ALTER TABLE `customer_products` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;");
+        DB::statement("CREATE TABLE `customer_products` ( `id` bigint(20) NOT NULL, `product_id` bigint(20) NOT NULL, `customer_id` bigint(20) NOT NULL, `price` double NOT NULL DEFAULT 0, `tax` double NOT NULL DEFAULT 0, `discount` double NOT NULL DEFAULT 0, `quantity` double NOT NULL, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `customer_products` ADD PRIMARY KEY (`id`);");
+        DB::statement("ALTER TABLE `customer_products` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

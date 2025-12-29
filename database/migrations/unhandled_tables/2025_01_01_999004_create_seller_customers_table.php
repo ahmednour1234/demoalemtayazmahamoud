@@ -16,10 +16,10 @@ class CreateSellerCustomersTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `seller_customers`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `seller_customers` -- CREATE TABLE `seller_customers` ( `id` int(11) NOT NULL, `local_id` bigint(20) NOT NULL, `customer_id` bigint(20) UNSIGNED NOT NULL, `seller_id` bigint(20) UNSIGNED NOT NULL, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `seller_customers` -- ALTER TABLE `seller_customers` ADD PRIMARY KEY (`id`), ADD KEY `customer_id` (`customer_id`), ADD KEY `seller_id` (`seller_id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `seller_customers` -- ALTER TABLE `seller_customers` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5783;");
-        DB::statement("-- -- Constraints for table `seller_customers` -- ALTER TABLE `seller_customers` ADD CONSTRAINT `seller_customers_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE, ADD CONSTRAINT `seller_customers_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `admins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;");
+        DB::statement("CREATE TABLE `seller_customers` ( `id` int(11) NOT NULL, `local_id` bigint(20) NOT NULL, `customer_id` bigint(20) UNSIGNED NOT NULL, `seller_id` bigint(20) UNSIGNED NOT NULL, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `seller_customers` ADD PRIMARY KEY (`id`), ADD KEY `customer_id` (`customer_id`), ADD KEY `seller_id` (`seller_id`);");
+        DB::statement("ALTER TABLE `seller_customers` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5783;");
+        DB::statement("ALTER TABLE `seller_customers` ADD CONSTRAINT `seller_customers_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE, ADD CONSTRAINT `seller_customers_ibfk_2` FOREIGN KEY (`seller_id`) REFERENCES `admins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

@@ -16,9 +16,9 @@ class CreateApplicationStatusHistoryTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `application_status_history`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `application_status_history` -- CREATE TABLE `application_status_history` ( `id` int(11) NOT NULL, `job_applicant_id` int(11) NOT NULL, `previous_status` varchar(50) NOT NULL, `new_status` varchar(50) NOT NULL, `changed_at` timestamp NULL DEFAULT current_timestamp(), `comment` text DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `application_status_history` -- ALTER TABLE `application_status_history` ADD PRIMARY KEY (`id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `application_status_history` -- ALTER TABLE `application_status_history` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;");
+        DB::statement("CREATE TABLE `application_status_history` ( `id` int(11) NOT NULL, `job_applicant_id` int(11) NOT NULL, `previous_status` varchar(50) NOT NULL, `new_status` varchar(50) NOT NULL, `changed_at` timestamp NULL DEFAULT current_timestamp(), `comment` text DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `application_status_history` ADD PRIMARY KEY (`id`);");
+        DB::statement("ALTER TABLE `application_status_history` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

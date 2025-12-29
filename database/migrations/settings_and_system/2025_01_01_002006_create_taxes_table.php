@@ -16,9 +16,9 @@ class CreateTaxesTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `taxes`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `taxes` -- CREATE TABLE `taxes` ( `id` bigint(20) UNSIGNED NOT NULL, `name` varchar(25) NOT NULL, `amount` varchar(11) NOT NULL, `active` int(11) NOT NULL DEFAULT 0, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
-        DB::statement("-- -- Indexes for table `taxes` -- ALTER TABLE `taxes` ADD PRIMARY KEY (`id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `taxes` -- ALTER TABLE `taxes` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;");
+        DB::statement("CREATE TABLE `taxes` ( `id` bigint(20) UNSIGNED NOT NULL, `name` varchar(25) NOT NULL, `amount` varchar(11) NOT NULL, `active` int(11) NOT NULL DEFAULT 0, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `updated_at` timestamp NOT NULL DEFAULT current_timestamp(), `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
+        DB::statement("ALTER TABLE `taxes` ADD PRIMARY KEY (`id`);");
+        DB::statement("ALTER TABLE `taxes` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

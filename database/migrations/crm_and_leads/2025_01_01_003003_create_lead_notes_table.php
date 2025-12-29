@@ -16,10 +16,10 @@ class CreateLeadNotesTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `lead_notes`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `lead_notes` -- CREATE TABLE `lead_notes` ( `id` bigint(20) UNSIGNED NOT NULL, `lead_id` bigint(20) UNSIGNED NOT NULL, `admin_id` bigint(20) UNSIGNED NOT NULL, `note` text NOT NULL, `visibility` enum('private','team','public') NOT NULL DEFAULT 'team', `created_at` timestamp NULL DEFAULT NULL, `updated_at` timestamp NULL DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;");
-        DB::statement("-- -- Indexes for table `lead_notes` -- ALTER TABLE `lead_notes` ADD PRIMARY KEY (`id`), ADD KEY `idx_leadnotes_lead` (`lead_id`), ADD KEY `idx_leadnotes_admin` (`admin_id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `lead_notes` -- ALTER TABLE `lead_notes` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;");
-        DB::statement("-- -- Constraints for table `lead_notes` -- ALTER TABLE `lead_notes` ADD CONSTRAINT `fk_leadnotes_admin` FOREIGN KEY (`admin_id`) REFERENCES `admins` (`id`), ADD CONSTRAINT `fk_leadnotes_lead` FOREIGN KEY (`lead_id`) REFERENCES `leads` (`id`) ON DELETE CASCADE;");
+        DB::statement("CREATE TABLE `lead_notes` ( `id` bigint(20) UNSIGNED NOT NULL, `lead_id` bigint(20) UNSIGNED NOT NULL, `admin_id` bigint(20) UNSIGNED NOT NULL, `note` text NOT NULL, `visibility` enum('private','team','public') NOT NULL DEFAULT 'team', `created_at` timestamp NULL DEFAULT NULL, `updated_at` timestamp NULL DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;");
+        DB::statement("ALTER TABLE `lead_notes` ADD PRIMARY KEY (`id`), ADD KEY `idx_leadnotes_lead` (`lead_id`), ADD KEY `idx_leadnotes_admin` (`admin_id`);");
+        DB::statement("ALTER TABLE `lead_notes` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;");
+        DB::statement("ALTER TABLE `lead_notes` ADD CONSTRAINT `fk_leadnotes_admin` FOREIGN KEY (`admin_id`) REFERENCES `admins` (`id`), ADD CONSTRAINT `fk_leadnotes_lead` FOREIGN KEY (`lead_id`) REFERENCES `leads` (`id`) ON DELETE CASCADE;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

@@ -16,9 +16,9 @@ class CreateRegionsTable extends Migration
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::statement("DROP TABLE IF EXISTS `regions`");
-        DB::statement("-- -------------------------------------------------------- -- -- Table structure for table `regions` -- CREATE TABLE `regions` ( `id` bigint(20) UNSIGNED NOT NULL, `local_id` bigint(20) NOT NULL, `name` varchar(255) DEFAULT NULL, `name_en` varchar(255) DEFAULT NULL, `insert_flag` tinyint(4) DEFAULT 1, `created_at` timestamp NULL DEFAULT NULL, `update_flag` tinyint(4) DEFAULT 0, `updated_at` timestamp NULL DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;");
-        DB::statement("-- -- Indexes for table `regions` -- ALTER TABLE `regions` ADD PRIMARY KEY (`id`);");
-        DB::statement("-- -- AUTO_INCREMENT for table `regions` -- ALTER TABLE `regions` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;");
+        DB::statement("CREATE TABLE `regions` ( `id` bigint(20) UNSIGNED NOT NULL, `local_id` bigint(20) NOT NULL, `name` varchar(255) DEFAULT NULL, `name_en` varchar(255) DEFAULT NULL, `insert_flag` tinyint(4) DEFAULT 1, `created_at` timestamp NULL DEFAULT NULL, `update_flag` tinyint(4) DEFAULT 0, `updated_at` timestamp NULL DEFAULT NULL, `deleted_at` timestamp NULL DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;");
+        DB::statement("ALTER TABLE `regions` ADD PRIMARY KEY (`id`);");
+        DB::statement("ALTER TABLE `regions` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;");
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 
