@@ -434,6 +434,24 @@ class AdminsSeeder extends Seeder
             ],
         ];
 
+        // Store manager_id mappings before validation (for self-referencing foreign keys)
+        $managerIdMappings = [];
+        foreach ($admins as $admin) {
+            if (isset($admin['id']) && isset($admin['manager_id']) && $admin['manager_id'] !== null) {
+                // Check if manager exists in our seed data
+                $managerExists = false;
+                foreach ($admins as $checkAdmin) {
+                    if (isset($checkAdmin['id']) && $checkAdmin['id'] == $admin['manager_id']) {
+                        $managerExists = true;
+                        break;
+                    }
+                }
+                if ($managerExists) {
+                    $managerIdMappings[$admin['id']] = $admin['manager_id'];
+                }
+            }
+        }
+
         // Validate and fix foreign key values
         foreach ($admins as &$admin) {
             // Validate department_id
@@ -460,27 +478,25 @@ class AdminsSeeder extends Seeder
                 }
             }
             
-            // manager_id is self-referencing, will be validated after first insert
-            // For now, we'll set it to null if the manager doesn't exist in our array
-            if (isset($admin['manager_id']) && $admin['manager_id'] !== null) {
-                $managerExists = false;
-                foreach ($admins as $checkAdmin) {
-                    if (isset($checkAdmin['id']) && $checkAdmin['id'] == $admin['manager_id']) {
-                        $managerExists = true;
-                        break;
-                    }
-                }
-                if (!$managerExists) {
-                    // Manager doesn't exist in our seed data, set to null
-                    $admin['manager_id'] = null;
-                }
-            }
+            // Set manager_id to null for initial insert (we'll update it later)
+            $admin['manager_id'] = null;
         }
         unset($admin); // Break the reference
 
-        // Insert in chunks
+        // Insert all admins first with manager_id = null
         foreach (array_chunk($admins, 100) as $chunk) {
             DB::table('admins')->insert($chunk);
+        }
+
+        // Now update manager_id values for self-referencing relationships
+        foreach ($managerIdMappings as $adminId => $managerId) {
+            // Verify the manager exists in database before updating
+            $managerExists = DB::table('admins')->where('id', $managerId)->exists();
+            if ($managerExists) {
+                DB::table('admins')
+                    ->where('id', $adminId)
+                    ->update(['manager_id' => $managerId]);
+            }
         }
 
         // Note: Add more admin data from the SQL file as needed
