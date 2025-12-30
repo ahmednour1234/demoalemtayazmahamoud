@@ -18,6 +18,11 @@ class AdminsSeeder extends Seeder
         DB::table('admins')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
+        // Get existing IDs to validate foreign keys
+        $existingDepartmentIds = DB::table('departments')->pluck('id')->toArray();
+        $existingBranchIds = DB::table('branches')->pluck('id')->toArray();
+        $existingRoleIds = DB::table('roles')->pluck('id')->toArray();
+
         $admins = [
             [
                 'id' => 100,
@@ -428,6 +433,50 @@ class AdminsSeeder extends Seeder
                 'deleted_at' => null,
             ],
         ];
+
+        // Validate and fix foreign key values
+        foreach ($admins as &$admin) {
+            // Validate department_id
+            if (isset($admin['department_id']) && $admin['department_id'] !== null) {
+                if (!in_array($admin['department_id'], $existingDepartmentIds)) {
+                    // Department doesn't exist, set to null
+                    $admin['department_id'] = null;
+                }
+            }
+            
+            // Validate branch_id
+            if (isset($admin['branch_id']) && $admin['branch_id'] !== null) {
+                if (!in_array($admin['branch_id'], $existingBranchIds)) {
+                    // Branch doesn't exist, set to null or default to 1 if exists
+                    $admin['branch_id'] = !empty($existingBranchIds) ? $existingBranchIds[0] : null;
+                }
+            }
+            
+            // Validate role_id
+            if (isset($admin['role_id']) && $admin['role_id'] !== null) {
+                if (!in_array($admin['role_id'], $existingRoleIds)) {
+                    // Role doesn't exist, set to null or default to first role if exists
+                    $admin['role_id'] = !empty($existingRoleIds) ? $existingRoleIds[0] : null;
+                }
+            }
+            
+            // manager_id is self-referencing, will be validated after first insert
+            // For now, we'll set it to null if the manager doesn't exist in our array
+            if (isset($admin['manager_id']) && $admin['manager_id'] !== null) {
+                $managerExists = false;
+                foreach ($admins as $checkAdmin) {
+                    if (isset($checkAdmin['id']) && $checkAdmin['id'] == $admin['manager_id']) {
+                        $managerExists = true;
+                        break;
+                    }
+                }
+                if (!$managerExists) {
+                    // Manager doesn't exist in our seed data, set to null
+                    $admin['manager_id'] = null;
+                }
+            }
+        }
+        unset($admin); // Break the reference
 
         // Insert in chunks
         foreach (array_chunk($admins, 100) as $chunk) {
